@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  has_many :posts
   attr_accessor :remember_token
   before_create :generate_token, :downcase_email
   validates :name,  presence: true, length: { maximum: 50 }

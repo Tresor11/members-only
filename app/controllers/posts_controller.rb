@@ -2,37 +2,31 @@
 
 class PostsController < ApplicationController
   include SessionsHelper
-  include PostsHelper
   # skip_before_action :logged, only: [:index]
   def index
-    @posts=Post.all
+    @posts = Post.all
   end
 
   def new
-    @post=Post.new
+    @post = Post.new
   end
 
   def create
-    @post=Post.new(post_params)
-    # @post.author=params[:name]
-    # @post.user_id=params[:user_id]
-
+    @post = Post.new(post_params)
+    @post.author = current_user.name
+    @post.user_id = current_user.id
     if @post.save
-      render :index
+      redirect_to posts_path
     else
-      flash.now[:danger]="there was an error creation this post"
+      flash.now[:danger] = 'there was an error creation this post'
     end
   end
 
   def show
-    @post=Post.find_by(id: params[:id])
+    @post = Post.find_by(id: params[:id])
   end
 
-  def new
-    @post=Post.new
-  end
-
-  def create
-    @post=Post.new(post_params)
+  def post_params
+    params.require(:post).permit(:title, :body)
   end
 end

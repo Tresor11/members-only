@@ -1,10 +1,10 @@
 <%= form_for(@post)do |f| %>
-
+<%=f.label :"#{(current_user).name}"%>
 <%= f.label :title %>
 <%= f.text_field :title %>
 
 <%= f.label :body %>
 <%= f.text_area :body %>
 
-<%= f.submit "create acount"%>
+<%= f.submit "create post"%>
 <% end %>

@@ -1,0 +1,21 @@
+<header>
+<div class="header">
+<div class="div1">
+<h2 class="logo">
+<%= link_to  "Sercret Posts", root_path %>
+</h2>
+</div>
+<div class="div2">
+<ul>
+<% if !logged_in?%>
+<li><%= link_to "Login", login_path %></li>
+<li><%= link_to "sign-up", signup_path %></li>
+<%else%>
+<li><%= link_to "Profile", current_user %></li>
+<li><%= link_to "log_out", logout_path ,method: :delete %></li>
+<li><%= link_to "create_post", new_post_path %></li>
+<%end%>
+</ul>
+</div>
+</div>
+<header>

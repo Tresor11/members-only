@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
   private
 
   def check_input
-    if params[:sessions][:email].blank?
+    if params[:sessions][:email].blank? # rubocop:disable Style/GuardClause
       flash.now[:danger] = 'Please enter your login details'
       render :new
     end

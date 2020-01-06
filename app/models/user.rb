@@ -13,9 +13,11 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
 
   def self.digest(string)
+    # rubocop:disable Style/MultilineTernaryOperator
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
+    # rubocop:enable Style/MultilineTernaryOperator
   end
 
   def self.new_token

@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   private
 
   def require_login
-    unless logged_in?
+    unless logged_in? # rubocop:disable Style/GuardClause
       flash[:error] = 'Please login in order to create posts'
       redirect_to login_path
     end

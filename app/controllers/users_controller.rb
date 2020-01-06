@@ -2,7 +2,6 @@
 
 class UsersController < ApplicationController
   include UsersHelper
-  include SessionsHelper
   def index; end
 
   def new
@@ -11,9 +10,15 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    redirect_to @user if @user.save
-    log_in @user
-    remember @user
+    if @user.save
+      flash[:success] = "Welcome #{@user.name}"
+      log_in @user
+      remember @user
+      redirect_to @user
+    else
+      flash.now[:error] = "You have entered incorrect details"
+      render :new
+    end
   end
 
   def show

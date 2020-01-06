@@ -24,11 +24,18 @@ ul{
   margin: auto;
 }
 
-form{
+.form-container{
   display: flex;
-  flex-direction: column;
-  width: 40%;
-  margin: auto;
+  width: 100%;
+  justify-content: center;
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    input {
+      width: 100%;
+    }
+  }
 }
 
 input{
@@ -60,4 +67,22 @@ a:hover{
   color: rgb(218, 218, 218);
   display: inline;
   margin-left: 10px;
+}
+
+.alert {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.alert-error {
+  color: red;
+}
+
+.alert-danger {
+  color: yellow;
+}
+
+.alert-success {
+  color: green;
 }

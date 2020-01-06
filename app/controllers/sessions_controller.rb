@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  before_action :check_input, only: [:create]
+
   def new; end
 
   def create
@@ -19,5 +21,14 @@ class SessionsController < ApplicationController
   def destroy
     log_out if logged_in?
     redirect_to root_url
+  end
+
+  private 
+  
+  def check_input
+    if params[:sessions][:email].blank?
+      flash.now[:danger] = "Please enter your login details"
+      render :new
+    end
   end
 end

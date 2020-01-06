@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  include SessionsHelper
-  # skip_before_action :logged, only: [:index]
+  before_action :require_login, only: [:new, :create]
   def index
     @posts = Post.all
   end
@@ -24,6 +23,15 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id])
+  end
+
+  private
+
+  def require_login
+    unless logged_in?
+      flash[:error] = "Please login in order to create posts"
+      redirect_to login_path
+    end
   end
 
   def post_params

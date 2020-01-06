@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       remember @user
       redirect_to @user
     else
-      flash.now[:error] = "You have entered incorrect details"
+      flash.now[:error] = 'You have entered incorrect details'
       render :new
     end
   end

@@ -23,11 +23,11 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 
-  private 
-  
+  private
+
   def check_input
     if params[:sessions][:email].blank?
-      flash.now[:danger] = "Please enter your login details"
+      flash.now[:danger] = 'Please enter your login details'
       render :new
     end
   end

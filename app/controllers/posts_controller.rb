@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :require_login, only: [:new, :create]
+  before_action :require_login, only: %i[new create]
   def index
     @posts = Post.all
   end
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
 
   def require_login
     unless logged_in?
-      flash[:error] = "Please login in order to create posts"
+      flash[:error] = 'Please login in order to create posts'
       redirect_to login_path
     end
   end

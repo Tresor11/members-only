@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2019_12_31_071823) do
 
   create_table "posts", force: :cascade do |t|
-<<<<<<< HEAD
     t.string "title"
     t.text "body"
     t.string "author"
@@ -21,10 +20,6 @@ ActiveRecord::Schema.define(version: 2019_12_31_071823) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
-=======
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
->>>>>>> 3f7375f4ccbdfc3c33299a12ea59c2c5c41f0ccf
   end
 
   create_table "users", force: :cascade do |t|

@@ -13,11 +13,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
 
   def self.digest(string)
-    # rubocop:disable Style/MultilineTernaryOperator
-    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                  BCrypt::Engine.cost
-    BCrypt::Password.create(string, cost: cost)
-    # rubocop:enable Style/MultilineTernaryOperator
+    Digest::SHA1.hexdigest string
   end
 
   def self.new_token
@@ -30,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def authenticated?(remember_token)
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    Digest::SHA1.hexdigest remember_digest.is_password?(remember_token)
   end
 
   def forget

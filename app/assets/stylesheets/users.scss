@@ -24,18 +24,11 @@ ul{
   margin: auto;
 }
 
-.form-container{
+form{
   display: flex;
-  width: 100%;
-  justify-content: center;
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    input {
-      width: 100%;
-    }
-  }
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
 }
 
 input{

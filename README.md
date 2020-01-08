@@ -12,17 +12,14 @@ The web app consists of a custom authentication system, user creation and post c
 
 3. Then run ``` rails db:migrate ``` to run the migrations which will setup your database
 
-3. Start your server ``` rails server ```
+3. Start your server ``` rails server ``
 
-<br/>
+## Features implemented: <br/>
 
-***
-## Features implemented:
-
-*a user can login
-*a user can sign up
-*a user can create a post
-*we used cockies and sessions to remember the user
+*a user can login <br/>
+*a user can sign up <br/>
+*a user can create a post <br/>
+*we used cockies and sessions to remember the user <br/>
 
 <br/>
 

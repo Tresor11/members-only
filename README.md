@@ -4,7 +4,7 @@ This project is a Rails-based system that allows you to create secret posts that
 
 The web app consists of a custom authentication system, user creation and post creation.
 
-To get started:
+##To get started:
 
 1. Clone this repo
 
@@ -17,6 +17,12 @@ To get started:
 <br/>
 
 ***
+## Features implemented:
+
+*a user can login
+*a user can sign up
+*a user can create a post
+*we used cockies and sessions to remember the user
 
 <br/>
 

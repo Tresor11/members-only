@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class SessionsController < ApplicationController
+  include ApplicationHelper
   before_action :check_input, only: [:create]
 
   def new; end

@@ -5554,3 +5554,490 @@ Did you mean?  log_in):
   
 app/views/shared/_header.html.erb:10:in `_app_views_shared__header_html_erb__2988641192998465829_70099875510500'
 app/views/layouts/application.html.erb:14:in `_app_views_layouts_application_html_erb___3263810888690847470_70099945683620'
+Started GET "/" for 127.0.0.1 at 2020-01-08 16:42:11 +0200
+  [1m[35m (16.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/tresor/.rbenv/versions/2.6.4/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (270.6ms)
+Completed 500 Internal Server Error in 417ms (ActiveRecord: 2.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `logged_in?' for #<#<Class:0x00007eff748e21f8>:0x00007eff748e7c98>
+Did you mean?  logger?):
+    3: <ul>
+    4: <%@posts.each do |p|%>
+    5: <li>
+    6: <% if logged_in?%>
+    7: <p> posted by <span class="user_name"><%= link_to  "#{p.author}", user_path(p.user_id) %></span> </P>
+    8: <% end%>
+    9: <%= link_to  "#{p.title}", p %>
+  
+app/views/posts/index.html.erb:6:in `block in _app_views_posts_index_html_erb__3291539301741114438_69817818617720'
+app/views/posts/index.html.erb:4:in `_app_views_posts_index_html_erb__3291539301741114438_69817818617720'
+Started GET "/" for 127.0.0.1 at 2020-01-08 16:50:54 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:18
+  Rendered posts/index.html.erb within layouts/application (93.0ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `is_password?' for "c3d52e7de6f26ce6a264c77b5b435e95fe2acbce":String):
+    3: <ul>
+    4: <%@posts.each do |p|%>
+    5: <li>
+    6: <% if logged_in?%>
+    7: <p> posted by <span class="user_name"><%= link_to  "#{p.author}", user_path(p.user_id) %></span> </P>
+    8: <% end%>
+    9: <%= link_to  "#{p.title}", p %>
+  
+app/models/user.rb:29:in `authenticated?'
+app/helpers/application_helper.rb:19:in `current_user'
+app/helpers/application_helper.rb:39:in `logged_in?'
+app/views/posts/index.html.erb:6:in `block in _app_views_posts_index_html_erb__3291539301741114438_47164890476720'
+app/views/posts/index.html.erb:4:in `_app_views_posts_index_html_erb__3291539301741114438_47164890476720'
+Started GET "/" for 127.0.0.1 at 2020-01-08 16:50:57 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:18
+  Rendered posts/index.html.erb within layouts/application (10.1ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `is_password?' for "c3d52e7de6f26ce6a264c77b5b435e95fe2acbce":String):
+    3: <ul>
+    4: <%@posts.each do |p|%>
+    5: <li>
+    6: <% if logged_in?%>
+    7: <p> posted by <span class="user_name"><%= link_to  "#{p.author}", user_path(p.user_id) %></span> </P>
+    8: <% end%>
+    9: <%= link_to  "#{p.title}", p %>
+  
+app/models/user.rb:29:in `authenticated?'
+app/helpers/application_helper.rb:19:in `current_user'
+app/helpers/application_helper.rb:39:in `logged_in?'
+app/views/posts/index.html.erb:6:in `block in _app_views_posts_index_html_erb__3291539301741114438_47164895059900'
+app/views/posts/index.html.erb:4:in `_app_views_posts_index_html_erb__3291539301741114438_47164895059900'
+Started GET "/" for 127.0.0.1 at 2020-01-08 16:53:22 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (15.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:18
+  Rendered posts/index.html.erb within layouts/application (67.6ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 17.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `is_password?' for "c3d52e7de6f26ce6a264c77b5b435e95fe2acbce":String):
+    3: <ul>
+    4: <%@posts.each do |p|%>
+    5: <li>
+    6: <% if logged_in?%>
+    7: <p> posted by <span class="user_name"><%= link_to  "#{p.author}", user_path(p.user_id) %></span> </P>
+    8: <% end%>
+    9: <%= link_to  "#{p.title}", p %>
+  
+app/models/user.rb:29:in `authenticated?'
+app/helpers/application_helper.rb:19:in `current_user'
+app/helpers/application_helper.rb:39:in `logged_in?'
+app/views/posts/index.html.erb:6:in `block in _app_views_posts_index_html_erb__3291539301741114438_69817818663400'
+app/views/posts/index.html.erb:4:in `_app_views_posts_index_html_erb__3291539301741114438_69817818663400'
+Started GET "/" for 127.0.0.1 at 2020-01-08 16:56:23 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:18
+  Rendered posts/index.html.erb within layouts/application (56.5ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of false into String):
+    3: <ul>
+    4: <%@posts.each do |p|%>
+    5: <li>
+    6: <% if logged_in?%>
+    7: <p> posted by <span class="user_name"><%= link_to  "#{p.author}", user_path(p.user_id) %></span> </P>
+    8: <% end%>
+    9: <%= link_to  "#{p.title}", p %>
+  
+app/models/user.rb:29:in `digest'
+app/models/user.rb:29:in `hexdigest'
+app/models/user.rb:29:in `authenticated?'
+app/helpers/application_helper.rb:19:in `current_user'
+app/helpers/application_helper.rb:39:in `logged_in?'
+app/views/posts/index.html.erb:6:in `block in _app_views_posts_index_html_erb__3291539301741114438_69817817762200'
+app/views/posts/index.html.erb:4:in `_app_views_posts_index_html_erb__3291539301741114438_69817817762200'
+Started GET "/" for 127.0.0.1 at 2020-01-08 16:57:17 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:18
+  Rendered posts/index.html.erb within layouts/application (60.8ms)
+  Rendered shared/_header.html.erb (1.4ms)
+  Rendered shared/_alert.html.erb (0.5ms)
+Completed 200 OK in 1077ms (Views: 1070.5ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2020-01-08 16:58:09 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"tm491bWv/g2A3CJAYHPnct3j1ZsYa+LBN1g5y2ODLjk72c6JPp24fZzykzW7wVp+xSbZgM8y0X9urpoaLrsDZA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2020-01-08 14:58:09.990630"], ["id", 1]]
+  ↳ app/models/user.rb:33
+  [1m[35m (134.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:33
+Redirected to http://localhost:3000/
+Completed 302 Found in 169ms (ActiveRecord: 135.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-08 16:58:10 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (2.7ms)
+  Rendered shared/_header.html.erb (0.8ms)
+  Rendered shared/_alert.html.erb (1.0ms)
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-01-08 16:58:16 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+Started GET "/login" for 127.0.0.1 at 2020-01-08 16:58:16 +0200
+  Rendered sessions/new.html.erb within layouts/application (448.3ms)
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (51.2ms)
+  Rendered shared/_header.html.erb (0.9ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+Completed 200 OK in 700ms (Views: 588.3ms | ActiveRecord: 0.0ms)
+
+
+  Rendered shared/_header.html.erb (1.1ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+Completed 200 OK in 131ms (Views: 128.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-01-08 16:58:20 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LFcvYc4ftkHgjooisoHV7aHtTwpIqN4zWMbWjA0y5JomaW3ZsPnk+GL1b/F+pCcthaFCA/DAlEXPyYqEiN0CTA==", "sessions"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  Rendered shared/_header.html.erb (1.3ms)
+  Rendered shared/_alert.html.erb (0.8ms)
+Filter chain halted as :check_input rendered or redirected
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-01-08 17:00:48 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vBMkSgCtw8+O9Zo0kXxPU7wD+63x1CGpJaPQOzgrAicxpNcWi5+Fv5LbK0FKzvJfpMb3tiaNEhd8VXPqdRMveg==", "sessions"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:25
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "1c4141fb92d647c7b22d4dffed27d10698fe5520"], ["updated_at", "2020-01-08 15:00:49.360393"], ["id", 1]]
+  ↳ app/models/user.rb:25
+  [1m[35m (1087.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:25
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 1582ms (ActiveRecord: 1087.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-01-08 17:00:50 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:16
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+  Rendered shared/_header.html.erb (1.0ms)
+  Rendered shared/_alert.html.erb (0.5ms)
+Completed 200 OK in 52ms (Views: 37.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-01-08 17:02:04 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:16
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  Rendered shared/_header.html.erb (1.1ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+Completed 200 OK in 41ms (Views: 38.2ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2020-01-08 17:02:13 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"w76/zay+6Dp7fzxLAaPUaEIwr+aUzdkc6SUfID9n311OCUyRJ4yuSmdRjT7aEWlkWvWj/UOU6qKw07zxcl/yAA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2020-01-08 15:02:13.999499"], ["id", 1]]
+  ↳ app/models/user.rb:33
+  [1m[35m (188.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:33
+Redirected to http://localhost:3000/
+Completed 302 Found in 198ms (ActiveRecord: 189.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-08 17:02:14 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (3.1ms)
+  Rendered shared/_header.html.erb (0.8ms)
+  Rendered shared/_alert.html.erb (2.0ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-08 17:06:31 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (303.6ms)
+Completed 500 Internal Server Error in 311ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `current_user' for #<#<Class:0x00007eff6135d510>:0x00007eff6136fb20>
+Did you mean?  current_page?):
+    3: <ul>
+    4: <%@posts.each do |p|%>
+    5: <li>
+    6: <% if logged_in?%>
+    7: <p> posted by <span class="user_name"><%= link_to  "#{p.author}", user_path(p.user_id) %></span> </P>
+    8: <% end%>
+    9: <%= link_to  "#{p.title}", p %>
+  
+app/helpers/application_helper.rb:5:in `logged_in?'
+app/views/posts/index.html.erb:6:in `block in _app_views_posts_index_html_erb__3291539301741114438_69817656340120'
+app/views/posts/index.html.erb:4:in `_app_views_posts_index_html_erb__3291539301741114438_69817656340120'
+Started GET "/" for 127.0.0.1 at 2020-01-08 17:08:03 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (18.3ms)
+  Rendered shared/_header.html.erb (2.2ms)
+  Rendered shared/_alert.html.erb (1.6ms)
+Completed 200 OK in 315ms (Views: 308.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-01-08 17:08:09 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.1ms)
+  Rendered shared/_header.html.erb (2.5ms)
+  Rendered shared/_alert.html.erb (0.6ms)
+Completed 200 OK in 141ms (Views: 73.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2020-01-08 17:08:15 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/EIWE4YEopy/ImbcBZizmmy7AnReeTj/PfhQwLhgoSr2fFSr+OLwJT1Zgw/JvUFaSPcPfeYRcomq9wzIPY9H/A==", "sessions"=>{"email"=>"abc@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "abc@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:25
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "47489b143b92637cf224bf3e32852043c18ded67"], ["updated_at", "2020-01-08 15:08:16.612688"], ["id", 1]]
+  ↳ app/models/user.rb:25
+  [1m[35m (992.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:25
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 2473ms (ActiveRecord: 995.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2020-01-08 17:08:17 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (1) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:10
+  Rendered users/show.html.erb within layouts/application (2.5ms)
+  Rendered shared/_header.html.erb (1.5ms)
+  Rendered shared/_alert.html.erb (0.8ms)
+Completed 200 OK in 50ms (Views: 43.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-08 17:08:20 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:10
+  Rendered posts/index.html.erb within layouts/application (3.9ms)
+  Rendered shared/_header.html.erb (3.0ms)
+  Rendered shared/_alert.html.erb (1.7ms)
+Completed 200 OK in 51ms (Views: 48.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2020-01-08 17:09:09 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (24.4ms)
+  Rendered shared/_header.html.erb (1.4ms)
+  Rendered shared/_alert.html.erb (0.7ms)
+Completed 200 OK in 98ms (Views: 67.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-08 17:09:44 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:10
+  Rendered posts/index.html.erb within layouts/application (5.8ms)
+  Rendered shared/_header.html.erb (1.7ms)
+  Rendered shared/_alert.html.erb (0.7ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2020-01-08 17:09:48 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Y8+iM+KcxVBv/iY6SerBc8mf/MpyXjm/15b8kDnRAH3ueFFvaa6DIHPQl0+SWHx/0Vrw0aUHCgGOYF9BdOktIA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:33
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2020-01-08 15:09:48.354694"], ["id", 1]]
+  ↳ app/models/user.rb:33
+  [1m[35m (149.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:33
+Redirected to http://localhost:3000/
+Completed 302 Found in 160ms (ActiveRecord: 150.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-01-08 17:09:48 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (3.4ms)
+  Rendered shared/_header.html.erb (2.2ms)
+  Rendered shared/_alert.html.erb (0.7ms)
+Completed 200 OK in 46ms (Views: 43.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2020-01-08 17:09:50 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered users/new.html.erb within layouts/application (6.1ms)
+  Rendered shared/_header.html.erb (1.3ms)
+  Rendered shared/_alert.html.erb (0.7ms)
+Completed 200 OK in 55ms (Views: 53.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/signup" for 127.0.0.1 at 2020-01-08 17:10:35 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9YrQtrFjeqTwcRM8b1dCqLS9G5ruYmZBzc9xarRMoWWVNA1Wa/V8+5OF0k/BJNJJogTtQx4EBL2bP2EdtyV5dg==", "user"=>{"name"=>"tresor", "email"=>"tre@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"create acount"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "tre@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "remember_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "tresor"], ["email", "tre@gmail.com"], ["created_at", "2020-01-08 15:10:35.679095"], ["updated_at", "2020-01-08 15:10:35.679095"], ["password_digest", "$2a$12$KW1lePwUbtuxg1Z1u.UvjODf09c2DOOht/caykk747jLV65k8pixm"], ["remember_digest", "de931157680ec9ae3bc82daac937d2f047583d63"]]
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (96.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/user.rb:25
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "remember_digest" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2020-01-08 15:10:35.803696"], ["remember_digest", "dd043c2faba721c24f72839043152ae1e57d2f07"], ["id", 2]]
+  ↳ app/models/user.rb:25
+  [1m[35m (71.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/user.rb:25
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 644ms (ActiveRecord: 169.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2020-01-08 17:10:35 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE (2) LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:25
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:10
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+  Rendered shared/_header.html.erb (1.4ms)
+  Rendered shared/_alert.html.erb (0.7ms)
+Completed 200 OK in 36ms (Views: 33.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/posts/new" for 127.0.0.1 at 2020-01-08 17:10:40 +0200
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:10
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (133.5ms)
+  Rendered shared/_header.html.erb (1.0ms)
+  Rendered shared/_alert.html.erb (0.9ms)
+Completed 200 OK in 171ms (Views: 168.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/posts" for 127.0.0.1 at 2020-01-08 17:11:00 +0200
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8OMqt101pg3q3ZcPjjV2IocdJi1OHdIF8nzEXZhtGsHiL9GfGlgG4B2NY5/0qUQi+X3uVVCMCUEnCuIIwgsuQw==", "post"=>{"title"=>"this is the second post", "body"=>"alrigh errors were fixed"}, "commit"=>"create post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:18
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:18
+  [1m[36mPost Create (0.8ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "author", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "this is the second post"], ["body", "alrigh errors were fixed"], ["author", "tresor"], ["user_id", 2], ["created_at", "2020-01-08 15:11:00.839229"], ["updated_at", "2020-01-08 15:11:00.839229"]]
+  ↳ app/controllers/posts_controller.rb:18
+  [1m[35m (235.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:18
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 512ms (ActiveRecord: 237.1ms)
+
+
+Started GET "/posts" for 127.0.0.1 at 2020-01-08 17:11:01 +0200
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (19.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:10
+  Rendered posts/index.html.erb within layouts/application (24.5ms)
+  Rendered shared/_header.html.erb (1.2ms)
+  Rendered shared/_alert.html.erb (0.7ms)
+Completed 200 OK in 63ms (Views: 41.7ms | ActiveRecord: 20.2ms)
+
+

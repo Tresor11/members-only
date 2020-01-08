@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
+  include ApplicationHelper
   before_action :require_login, only: %i[new create]
   def index
     @posts = Post.all

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  include ApplicationHelper
   def index; end
 
   def new

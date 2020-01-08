@@ -1,24 +1,34 @@
-# README
+# Members Only
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a Rails-based system that allows you to create secret posts that only users can make aswell as see who authored them.
 
-Things you may want to cover:
+The web app consists of a custom authentication system, user creation and post creation.
 
-* Ruby version
+``GET STARTED:`` 
 
-* System dependencies
+1. Clone this repo
 
-* Configuration
+2. Run ``` bundle install ``` in the root directory
 
-* Database creation
+3. Then run ``` rails db:migrate ``` to run the migrations which will setup your database
 
-* Database initialization
+3. Start your server ``` rails server ``
 
-* How to run the test suite
+## Features implemented: <br/>
 
-* Services (job queues, cache servers, search engines, etc.)
+*a user can login <br/>
 
-* Deployment instructions
+*a user can sign up <br/>
 
-* ...
+*a user can create a post <br/>
+
+*we used cockies and sessions to remember the user <br/>
+
+<br/>
+
+Collaborators:
+<br/>
+<br/>
+Sharmarke Ahmed (@mrnadaara)
+<br/>
+Tresor Bireke (@Tresor11)

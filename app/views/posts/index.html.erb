@@ -1,0 +1,13 @@
+<div class="col index">
+<h4>buzz feed</h4>
+<ul>
+<%@posts.each do |p|%>
+<li>
+<% if logged_in?%>
+<p> posted by <span class="user_name"><%= link_to  "#{p.author}", user_path(p.user_id) %></span> </P>
+<% end%>
+<%= link_to  "#{p.title}", p %>
+</li>
+<%end%>
+</ul>
+</div>

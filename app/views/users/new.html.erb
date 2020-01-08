@@ -1,6 +1,8 @@
 <%=provide(:title , "sign up")%>
 
-<%= form_for(@user) do |f| %>
+<div class="form-container">
+<%= form_for(@user, url: signup_url) do |f| %>
+<%= render 'shared/error_messages'%>
 <%= f.label :name %>
 <%= f.text_field :name %>
 
@@ -15,3 +17,4 @@
 
 <%= f.submit "create acount"%>
 <% end %>
+</div>
